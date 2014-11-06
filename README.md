@@ -1,3 +1,5 @@
 mebox
 =====
-My Project developed by Django
+My Project developed by Django.
+I start learning django 
+
