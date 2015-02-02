@@ -1,4 +1,5 @@
 from django.db import models
+from taggit.managers import TaggableManager
 
 # Create your models here.
 
@@ -10,14 +11,7 @@ class BookCatalog(models.Model):
     def __str__(self):             
         return self.name
 
-  
-  
-class BookTag(models.Model):
-    name = models.CharField(max_length=200)
-    description = models.TextField()
-        
-    def __str__(self):              
-        return self.name
+   
         
 
 class Book(models.Model):
@@ -31,7 +25,8 @@ class Book(models.Model):
     created_time=models.DateTimeField(auto_now_add=True)
     last_modified_time=models.DateTimeField(auto_now=True)
     catalog=models.ForeignKey(BookCatalog)
-    tags = models.ManyToManyField(BookTag)
+    
+    tags = TaggableManager()
     
     def __str__(self):              # __unicode__ on Python 2
         return self.name
