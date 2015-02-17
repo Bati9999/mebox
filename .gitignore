@@ -54,3 +54,7 @@ docs/_build/
 target/
 
 .sass-cache/
+
+mebox/assets_source/node_modules/
+mebox/assets_source/third_lib/
+
